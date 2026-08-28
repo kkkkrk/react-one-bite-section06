@@ -17,5 +17,14 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    rules: {
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true},
+      ],
+      'no-unused-vars': 'off',
+      'react/prop-types': 'off',
+      // 필요한 ESLint 및 플러그인 규칙을 여기에 작성
+    },
   },
 ])

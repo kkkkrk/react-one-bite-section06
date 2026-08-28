@@ -1,24 +1,24 @@
-import './App.css';
-import Viewer from "./components/Viewer"; 
-import Controller from './components/Controller';
-import { useState } from 'react';
+import { use, useState } from 'react';
+import './App.css'; 
+import Viewer from './components/Viewer';
+import Controller from './components/Contoller';
 
 function App() {
   const [count, setCount] = useState(0);
-
-  const onClickButton = (value) => {
-    setCount(count + value);
+  const handleInc = (value) => {
+    setCount(count+value);
   }
-
-  return <div className='App'>
-    <h1>Simple Counter</h1>
-    <section>
-      <Viewer count = {count}/>
-    </section>
-    <section>
-      <Controller onClickButton = {onClickButton}/>
-    </section>
-  </div>
+    return(
+      <div className='App'>
+        <h1>Simple Counter</h1>
+        <section>
+          <Viewer count = {count}/>
+        </section>
+        <section>
+          <Controller handleInc = {handleInc}/>
+        </section>
+      </div>
+    )
 }
 
 export default App
